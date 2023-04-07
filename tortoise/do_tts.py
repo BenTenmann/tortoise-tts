@@ -22,6 +22,7 @@ if __name__ == '__main__':
     parser.add_argument('--cvvp_amount', type=float, help='How much the CVVP model should influence the output.'
                                                           'Increasing this can in some cases reduce the likelihood of multiple speakers. Defaults to 0 (disabled)', default=.0)
     args = parser.parse_args()
+    print("Converting the following text:", args.text, sep="\n")
     os.makedirs(args.output_path, exist_ok=True)
 
     tts = TextToSpeech(models_dir=args.model_dir)
