@@ -25,7 +25,7 @@ if __name__ == '__main__':
     print("Converting the following text:", args.text, sep="\n")
     os.makedirs(args.output_path, exist_ok=True)
 
-    tts = TextToSpeech(models_dir=args.model_dir)
+    tts = TextToSpeech(autoregressive_batch_size=8, models_dir=args.model_dir)
 
     selected_voices = args.voice.split(',')
     for k, selected_voice in enumerate(selected_voices):
